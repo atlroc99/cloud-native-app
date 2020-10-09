@@ -1,0 +1,13 @@
+FROM java:8
+
+LABEL key="mohammad zaman <mzaman.aws@gmail.com>" 
+
+                                            #this will add the jar file into the container's home directory
+ADD target/couponservice-0.0.1-SNAPSHOT.jar couponservice-0.0.1-SNAPSHOT.jar 
+
+#commands to run while containers start
+ENTRYPOINT ["java", "-jar", "couponservice-0.0.1-SNAPSHOT.jar"]
+
+# WORKDIR 
+# RUN 
+# CMD

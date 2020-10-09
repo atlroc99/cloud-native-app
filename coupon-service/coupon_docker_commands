@@ -1,0 +1,19 @@
+check the image and containes first:
+$ docker images
+$ docker ps -all
+
+Build the image from the docker file:
+$ docker build -f Dockerfile. -t coupon-app-image .
+
+Run image as a container:
+$ docker run -t --name coupon-app --link product_coupon_mysql:mysql -p 10555:8090 coupon-app-image
+
+Push docker images to docker hub
+1) Frist tag the image you want to push with your docker userID
+ #docker tag imageName atlroc99/name-you-want-give
+ $ docker tag coupon-app-image atlroc99/coupon-service
+ #login : docker login -> provice docker username and password
+ $ docker push
+
+
+
